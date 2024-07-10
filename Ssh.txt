@@ -1,0 +1,67 @@
+sudo apt install openssh-server
+sudo systemctl status ssh
+sudo ufw allow ssh
+sudo systemctl enable ssh
+
+sudo apt update
+sudo apt install openssh-server
+
+cấu hình 1 lần 
+
+sudo nano /etc/vsftpd.conf
+allow_writeable_chroot=YES
+chroot_local_user=YES
+sudo systemctl restart vsftpd
+
+
+ls: Liệt kê tệp và thư mục trên server.
+cd <thư_mục>: Thay đổi thư mục trên server.
+lcd <thư_mục>: Thay đổi thư mục cục bộ.
+get <tệp>: Tải tệp từ server về máy tính của bạn.
+put <tệp>: Tải tệp từ máy tính của bạn lên server.
+exit: Thoát khỏi phiên làm việc SFTP.
+Ghi chú về Bảo mật
+Sử dụng SFTP (SSH File Transfer Protocol) là an toàn hơn so với FTP thông thường vì nó mã hóa cả dữ liệu truyền và thông tin đăng nhập. Tuy nhiên, bạn vẫn nên thay đổi mật khẩu mặc định thành một mật khẩu mạnh hơn để bảo vệ tài khoản của bạn.
+
+
+Để truyền tệp bằng FTP từ máy ảo sang máy thật, bạn có thể làm theo các bước sau. Trong hướng dẫn này, tôi sẽ sử dụng máy ảo với Ubuntu và máy thật cũng sử dụng Ubuntu hoặc một hệ điều hành có hỗ trợ SSH.
+sudo adduser newuser
+sudo su - newuser
+sudo mkdir /home/newuser/.ssh
+sudo chmod 700 /home/newuser/.ssh
+sudo chown newuser:newuser /home/newuser/.ssh
+
+sudo nano /etc/ssh/sshd_config
+AllowUsers 
+DenyUsers
+
+
+4. Truyền tệp
+Sau khi kết nối thành công, bạn có thể sử dụng các lệnh SFTP để truyền tệp.
+
+Tải tệp từ máy ảo về máy thật:
+
+
+get /đường/dẫn/đến/tệp_trên_máy_ảo /đường/dẫn/đến/tệp_trên_máy_thật
+Ví dụ:
+
+get /home/quan/testfile.txt /home/user/
+Tải tệp từ máy thật lên máy ảo:
+
+
+put /đường/dẫn/đến/tệp_trên_máy_thật /đường/dẫn/đến/tệp_trên_máy_ảo
+Ví dụ:
+
+
+put /home/user/testfile.txt /home/quan/
+Các lệnh hữu ích khác:
+
+ls: Liệt kê các tệp và thư mục trên máy ảo.
+lcd <thư_mục>: Thay đổi thư mục cục bộ trên máy thật.
+cd <thư_mục>: Thay đổi thư mục trên máy ảo.
+exit: Thoát khỏi phiên SFTP.
+
+trong trường hợp không truy cập vào được thư mục
+sudo chmod 755 /home/userubt266
+4 - read 2 - write 1 - execute 
+

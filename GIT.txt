@@ -1,0 +1,34 @@
+GIT
+1. git init <tên-file> = tạo local repo
+2. git remote add origin <link> = liên kết đến remote repo
+3. code . = mở visual 
+4. git add <tên-file> = thêm tệp được chỉ định vào khu vực tạm thời (staging area), chuẩn bị cho việc commit
+5. git commit -m "Thay đổi" = commit lại các thay đổi, giúp bạn và người khác hiểu những thay đổi gì đã được thực hiện trong commit đó
+6. git branch -M main: đổi tên nhánh hiẹn tại thành main, 
+7. git push origin master / git push origin main: push các thay đổi từ nhánh main / master lên kho lưu trữ ( origin )
+
+GIT branch
+8. git branch <tên-nhánh> : tạo nhánh mới
+9. git checkout <tên-nhánh> : chuyển sang nhánh được chỉ định
+10. git checkout -b <tên-nhánh> : tạo và chuyển sang nhánh mới
+11. git branch : chuyển sang nhánh mới 
+12. git pull origin <tên-nhánh> : pull code từ remote repo về nhánh 
+13. git merge <tên-nhánh> : gộp nhánh được chọn vào nhánh hiện tại
+14. git branch -d <tên-nhánh> : xoá nhánh được chỉ định
+
+
+git init QLKTX
+cd QLKTX
+git remote add origin https://github.com/MinhWuanne/QLKTX.git
+Thêm dữ liệu vào folder QLKTX -> git add . ->  git add .
+git commit -m "Add Project QLKTX"
+git push origin master
+git branch Dev_Hung
+git branch Dev_Dung
+git branch Dev_Tri
+git branch Dev_Quan
+
+git checkout Dev_Quan
+code . -> Thêm 1 file README.md -> git add . -> git commit -m "Add file README.md"
+git push origin Dev_Quan
+git checkout master -> git pull origin Dev_Quan -> git merge Dev_Quan -> Pull trên Github -> git push origin master
