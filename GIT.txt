@@ -32,3 +32,13 @@ git checkout Dev_Quan
 code . -> Thêm 1 file README.md -> git add . -> git commit -m "Add file README.md"
 git push origin Dev_Quan
 git checkout master -> git pull origin Dev_Quan -> git merge Dev_Quan -> Pull trên Github -> git push origin master
+
+--Cách kéo file về máy :
+open git bash trong thư mục
+git init
+git config --global user.name "duong"
+git config --global user.email "hoangduongthvn@gmail.com"
+git remote add origin https://github.com/mixaotrung123/qtdb.git
+git clone https://github.com/mixaotrung123/qtdb.git~
+cd qtdb
+curl -0 https://github.com/mixaotrung123/qtdb/blob/master/GIT.txt
